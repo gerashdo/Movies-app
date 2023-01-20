@@ -5,6 +5,7 @@ import { ActivityIndicator, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Carousel from 'react-native-snap-carousel';
+import { GradiantBackground } from '../components/GradiantBackground';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 
 import { MoviePoster } from '../components/MoviePoster';
@@ -34,31 +35,33 @@ export const HomeScreen = () => {
     }
 
     return (
-        <ScrollView>
-            <View style={{ marginTop: top + 20 }}>
-                <View style={{ height: 430 }}>
-                    <Carousel 
-                        data={ nowPlaying }
-                        renderItem={ ({ item }: any) => <MoviePoster movie={ item }/>}
-                        sliderWidth={ windowWidth }
-                        itemWidth={ 250 }
-                        inactiveSlideOpacity={ 0.9 }
-                    />
-                </View>
+        <GradiantBackground>
+            <ScrollView>
+                <View style={{ marginTop: top + 20 }}>
+                    <View style={{ height: 430 }}>
+                        <Carousel 
+                            data={ nowPlaying }
+                            renderItem={ ({ item }: any) => <MoviePoster movie={ item }/>}
+                            sliderWidth={ windowWidth }
+                            itemWidth={ 250 }
+                            inactiveSlideOpacity={ 0.9 }
+                            />
+                    </View>
 
-                <HorizontalSlider 
-                    movies={ popular }
-                    title='Populares'
-                />
-                <HorizontalSlider 
-                    movies={ topRated }
-                    title='Top'
-                />
-                <HorizontalSlider 
-                    movies={ upcoming }
-                    title='Proximas'
-                />
-            </View>
-        </ScrollView>
+                    <HorizontalSlider 
+                        movies={ popular }
+                        title='Populares'
+                        />
+                    <HorizontalSlider 
+                        movies={ topRated }
+                        title='Top'
+                        />
+                    <HorizontalSlider 
+                        movies={ upcoming }
+                        title='Proximas'
+                        />
+                </View>
+            </ScrollView>
+        </GradiantBackground>
     )
 }
