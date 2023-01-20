@@ -17,6 +17,10 @@ export const MoviePoster = ({ movie, height = 400, width = 250 }: Props) => {
     const navigator = useNavigation<StackNavigationProp<RootStackParamList>>()
 
     const uri = `https://image.tmdb.org/t/p/w500${ movie.poster_path }`
+
+    const handlePosterPress = () => {
+        requestAnimationFrame( () => navigator.navigate('DetailScreen', movie ) )
+    }
     
     return (
         <TouchableOpacity 
@@ -28,7 +32,7 @@ export const MoviePoster = ({ movie, height = 400, width = 250 }: Props) => {
                 paddingHorizontal: 7
             }}
             activeOpacity={ 0.9 }
-            onPress={ () => navigator.navigate('DetailScreen', movie )}
+            onPress={ handlePosterPress }
         >
             <View style={ styles.posterContainer }>
                 <Image

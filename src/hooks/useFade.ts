@@ -11,7 +11,7 @@ export const useFade = () => {
             opacity,
             {
                 toValue: 1,
-                duration: 500,
+                duration: 300,
                 useNativeDriver: true,
             }
         ).start( () => callback ? callback(): null );
@@ -22,7 +22,7 @@ export const useFade = () => {
             opacity,
             {
                 toValue: 0,
-                duration: 300,
+                duration: 150,
                 useNativeDriver: true,
             }
         ).start();

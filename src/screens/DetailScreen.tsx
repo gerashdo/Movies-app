@@ -22,6 +22,10 @@ export const DetailScreen = ( { route, navigation }: Props ) => {
 
   const { isLoading, fullMovie, cast } = useDetails( movie.id )
 
+  const handleBackPress = () => {
+    requestAnimationFrame( () => navigation.pop() )
+  }
+
   return (
     <>
     <ScrollView>
@@ -42,7 +46,7 @@ export const DetailScreen = ( { route, navigation }: Props ) => {
       }
       <TouchableOpacity
         style={{ ...styles.backButton, top: top + 20 } }
-        onPress={ () => navigation.pop() }
+        onPress={ handleBackPress }
       >
         <Icon 
           name="arrow-back-outline"

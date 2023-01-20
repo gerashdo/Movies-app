@@ -3,7 +3,6 @@ import React, { useContext, useEffect } from 'react'
 import { Dimensions, ScrollView } from 'react-native';
 import { ActivityIndicator, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import ImageColors from 'react-native-image-colors'
 
 import Carousel from 'react-native-snap-carousel';
 import { GradiantBackground } from '../components/GradiantBackground';
